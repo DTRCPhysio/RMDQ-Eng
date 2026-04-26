@@ -125,7 +125,7 @@
 
   <div id="questions"></div>
 
-  <button onclick="calculateRMDQ()">Please show to your therapist</button>
+  <button type="button" onclick="requestPassword()">Show to your therapist</button>
 </div>
 
 <!-- Modal -->
@@ -210,6 +210,18 @@ function calculateRMDQ() {
   document.getElementById("scoreModal").style.display = "block";
 }
 
+function requestPassword() {
+  const pwd = prompt("Please enter the therapist password:");
+
+  if (pwd === null) return;
+
+  if (pwd === "225500") {
+    calculateRMDQ();
+  } else {
+    alert("Incorrect password. Access denied.");
+  }
+}
+
 function closeModal() {
   document.getElementById("scoreModal").style.display = "none";
 }
@@ -217,3 +229,4 @@ function closeModal() {
 
 </body>
 </html>
+
